@@ -42,7 +42,3 @@ app.post("/handle-key", (request, response) => {
   response.type("text/xml");
   response.send(twiml.toString());
 });
-
-app.listen(1337, () => {
-  console.log("TwiML server running at http://127.0.0.1:1337/");
-});

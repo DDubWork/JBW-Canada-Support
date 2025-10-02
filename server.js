@@ -24,10 +24,10 @@ app.post("/voice", (req, res) => {
 
   gather.say(
     "Welcome to JB Warranties Canada support. Press 1 to connect to Alex Bulanov. Press 2 to connect to Sam Arbour. To repeat this message, press star",
-    { bargeIn: true }
+    { bargeIn: true, language:"en-US" }
   );
 
-  response.say("We did not receive any input. Goodbye!");
+  response.say("We did not receive any input. Goodbye!", language="en-US");
 
   res.type("text/xml");
   res.send(response.toString());
@@ -39,10 +39,10 @@ app.post("/handle-key", (req, res) => {
   const digit = req.body.Digits;
 
   if (digit === "1") {
-    response.say("Please hold for Alex Bulanov");
+    response.say("Please hold for Alex Bulanov", language="en-US");
     response.dial("+12892007026");
   } else if (digit === "2") {
-    response.say("Please hold for Sam Arbour");
+    response.say("Please hold for Sam Arbour", language="en-US");
     response.dial("+12894235553");
   } else if (digit === "*") {
     response.redirect("/voice");

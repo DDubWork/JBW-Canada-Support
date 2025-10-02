@@ -23,7 +23,7 @@ app.post("/voice", (req, res) => {
   });
 
   gather.say(
-    "Welcome to JB Warranties Canada support. Press 1 to connect to Alex Bulanov. Press 2 to connect to Sam Arbour.",
+    "Welcome to JB Warranties Canada support. Press 1 to connect to Alex Bulanov. Press 2 to connect to Sam Arbour. To repeat this message, press star",
     { bargeIn: true }
   );
 
@@ -44,8 +44,8 @@ app.post("/handle-key", (req, res) => {
   } else if (digit === "2") {
     response.say("Please hold for Sam Arbour");
     response.dial("+12894235553");
-  } else {
-    response.say("Invalid choice, goodbye.");
+  } else if (digit === "*") {
+    response.redirect("/voice");
   }
 
   res.type("text/xml");

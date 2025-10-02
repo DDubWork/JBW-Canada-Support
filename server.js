@@ -5,6 +5,10 @@ const { twiml } = require("twilio");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
+app.get("/", (req, res) => {
+  res.send("✅ Server is running. Twilio webhook endpoints are ready.");
+});
 // Route for initial call
 app.post("/voice", (req, res) => {
   const response = new twiml.VoiceResponse();

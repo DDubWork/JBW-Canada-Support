@@ -1,3 +1,6 @@
+console.log("🚀 Starting server.js...");
+
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const { twiml } = require("twilio");

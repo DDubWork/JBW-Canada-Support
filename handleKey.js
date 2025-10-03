@@ -23,4 +23,4 @@ const handleKey = app.post("/handle-key", (req, res) => {
   res.send(response.toString());
 });
 
-module.exports(handleKey);
+module.exports = handleKey;

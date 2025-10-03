@@ -2,10 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const { twiml } = require("twilio");
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
+const router = express.Router();
+
+router.use(bodyParser.urlencoded({ extended: false }));
 
 
-const handleVoiceKey = app.post("/handle-key", (req, res) => {
+router.post("/", (req, res) => {
   const response = new twiml.VoiceResponse();
   const digit = req.body.Digits;
 
@@ -23,4 +25,4 @@ const handleVoiceKey = app.post("/handle-key", (req, res) => {
   res.send(response.toString());
 });
 
-module.exports = handleVoiceKey;
+module.exports = router;

@@ -19,7 +19,7 @@ app.use('/handleVoiceKey', handleVoiceKey); // use the
 app.use('/message', message); // use the
 
 
-const PORT = 80;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`✅ Server running on ${PORT}`);
 });

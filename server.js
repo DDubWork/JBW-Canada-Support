@@ -1,4 +1,4 @@
-const handleKey = require("./handle-key.js");
+const handleKey = require("./handleKey.js");
 
 console.log("🚀 Starting server.js...");
 

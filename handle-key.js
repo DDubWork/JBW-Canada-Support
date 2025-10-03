@@ -6,7 +6,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 const handleKey = app.post("/handle-key", (req, res) => {
-console.log("🚀 Handling key press...");
   const response = new twiml.VoiceResponse();
   const digit = req.body.Digits;
 
@@ -24,4 +23,4 @@ console.log("🚀 Handling key press...");
   res.send(response.toString());
 });
 
-export default handleKey;
+module.exports(handleKey);

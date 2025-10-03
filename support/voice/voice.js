@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
   });
 
   gather.say(
-    "Welcome to JB Warranties Canada support. Press 1 to connect to Alex Bulanov. Press 2 to connect to Sam Arbour. To repeat this message, press star",
+    "Welcome to JB Warranties Canada support. Press 1 to connect with the support team. To repeat this message, press star",
     { bargeIn: true, language: "en-US" }
   );
 

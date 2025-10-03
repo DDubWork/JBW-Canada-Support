@@ -11,15 +11,15 @@ router.post("/", (req, res) => {
   const response = new twiml.VoiceResponse();
   const digit = req.body.Digits;
 
-  if (digit === "1") {
-    response.say("Please hold for Alex Bulanov", language="en-US");
-    response.dial("+12892007026");
-  } else if (digit === "2") {
-    response.say("Please hold for Sam Arbour", language="en-US");
-    response.dial("+12894235553");
-  } else if (digit === "*") {
-    response.redirect("/voice");
-  }
+ if (digit === "1") {
+  response.say("Please hold", { language: "en-US" });
+  const dial = response.dial();
+  dial.number("+12892007026");
+  dial.number("+12894235553");
+
+} else if (digit === "*") {
+  response.redirect("/voice");
+}
 
   res.type("text/xml");
   res.send(response.toString());

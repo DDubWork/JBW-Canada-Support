@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.send("✅ Server is running. Twilio webhook endpoints are ready.");
 });
 // Route for initial call
-  const voice = app.post("/voice", (req, res) => {
+  app.post("/voice", (req, res) => {
   const response = new twiml.VoiceResponse();
 
   const gather = response.gather({

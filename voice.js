@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 
-app.post("/voice", (req, res) => {
+const voice = app.post("/voice", (req, res) => {
   const response = new twiml.VoiceResponse();
 
   const gather = response.gather({

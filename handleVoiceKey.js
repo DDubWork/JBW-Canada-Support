@@ -5,7 +5,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
-const handleKey = app.post("/handle-key", (req, res) => {
+const handleVoiceKey = app.post("/handle-key", (req, res) => {
   const response = new twiml.VoiceResponse();
   const digit = req.body.Digits;
 

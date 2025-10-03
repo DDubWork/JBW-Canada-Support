@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 // Route for initial call
   voice 
-  handleKey
+  handleVoiceKey
 
   res.type("text/xml");
   res.send(response.toString());

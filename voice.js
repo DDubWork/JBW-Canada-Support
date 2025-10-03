@@ -23,3 +23,5 @@ app.post("/voice", (req, res) => {
 
   response.say("We did not receive any input. Goodbye!", language="en-US");
 });
+
+module.exports = voice
